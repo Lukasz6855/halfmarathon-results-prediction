@@ -1,0 +1,36 @@
+# Pliki środowiskowe z kluczami API
+.env
+
+# Pliki tymczasowe Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Foldery wirtualnego środowiska
+venv/
+env/
+ENV/
+
+# Foldery IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Pliki cache
+.cache/
+*.log
+
+# Pliki systemowe
+.DS_Store
+Thumbs.db
+
+# Dane wrażliwe (klucze, tokeny)
+*_token.txt
+*_key.txt
+
+# Pliki modeli lokalnych (opcjonalnie, jeśli nie chcesz wersjonować)
+# models/*.pkl

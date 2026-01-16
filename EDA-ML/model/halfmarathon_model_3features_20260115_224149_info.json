@@ -1,0 +1,17 @@
+{
+    "model_type": "PassiveAggressiveRegressor",
+    "training_date": "2026-01-15 22:41:49",
+    "dataset_size": 18450,
+    "features": [
+        "Płeć",
+        "5 km Czas_sekundy",
+        "Rocznik"
+    ],
+    "target": "Czas_sekundy",
+    "mae_cv": 297.62768206875154,
+    "mae_minutes": 4.960461367812526,
+    "tuning_applied": true,
+    "tuning_iterations": 10,
+    "models_compared": 5,
+    "best_model_rank_before_tuning": 2
+}

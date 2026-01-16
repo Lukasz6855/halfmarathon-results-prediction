@@ -1,0 +1,34 @@
+# Zależności dla aplikacji Streamlit - Przewidywanie czasu w półmaratonie
+# Instalacja: pip install -r requirements.txt
+
+# === APLIKACJA GŁÓWNA ===
+streamlit>=1.30.0          # Framework do tworzenia aplikacji webowych
+
+# === ANALIZA DANYCH ===
+pandas>=2.0.0              # Manipulacja danymi
+numpy>=1.24.0              # Operacje numeryczne
+
+# === MACHINE LEARNING ===
+scikit-learn>=1.3.0        # Modele ML (używane przez PyCaret)
+pycaret[full]>=3.0.0       # AutoML framework (zawiera wszystkie zależności)
+
+# === AI I MONITORING ===
+openai>=1.10.0             # API OpenAI do generowania komentarzy
+langfuse>=2.0.0            # Monitoring użycia LLM
+
+# === POBIERANIE DANYCH ===
+requests>=2.31.0           # Pobieranie modelu z Vercel Blob
+python-dotenv>=1.0.0       # Ładowanie zmiennych środowiskowych z .env
+
+# === EKSPORT DANYCH ===
+openpyxl>=3.1.0            # Export do Excel (.xlsx)
+xlsxwriter>=3.1.0          # Alternatywny engine do Excel
+
+# === WIZUALIZACJE (opcjonalne) ===
+plotly>=5.18.0             # Interaktywne wykresy
+matplotlib>=3.7.0          # Podstawowe wykresy
+seaborn>=0.12.0            # Statystyczne wykresy
+
+# === INNE ===
+python-dateutil>=2.8.0     # Parsowanie dat
+pytz>=2023.3               # Strefy czasowe
