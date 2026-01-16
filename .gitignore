@@ -1,0 +1,88 @@
+# ============================================
+# PLIKI WRAŻLIWE - NIGDY NIE COMMITOWAĆ!
+# ============================================
+
+# Pliki .env we wszystkich folderach
+.env
+**/.env
+.env.local
+.env.*.local
+
+# ============================================
+# PYTHON
+# ============================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook checkpoints (pliki tymczasowe)
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# ============================================
+# IDE / EDITOR
+# ============================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# Other
+*.swp
+*.swo
+*~
+
+# ============================================
+# LOGS I CACHE
+# ============================================
+
+*.log
+.cache/
+logs/
+*.log.*
+
+# ============================================
+# SYSTEM FILES
+# ============================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dane wrażliwe (klucze, tokeny)
+*_token.txt
+*_key.txt
+
+# ============================================
+# DANE I MODELE (opcjonalnie)
+# ============================================
+
+# Modele ML lokalne (jeśli są duże)
+# *.pkl
+# *.h5
+# *.pt
+
+# Duże pliki danych (opcjonalnie)
+# *.csv
+# data/raw/*
+
+# ============================================
+# BUILD I DIST
+# ============================================
+
+build/
+dist/
+*.egg-info/
