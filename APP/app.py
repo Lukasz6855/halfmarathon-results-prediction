@@ -19,7 +19,7 @@ from utils.model_loader import load_model_from_blob, get_model_info  # Import fu
 from utils.predictor import prepare_input_data, predict_time, calculate_age_category  # Import funkcji predykcji
 from utils.stats_calculator import (  # Import funkcji statystyk
     get_winners, get_averages, get_category_stats,
-    estimate_ranking, prepare_excel_export, format_time_from_seconds,
+    estimate_ranking, format_time_from_seconds,
     get_winners_by_category, get_average_times_by_category
 )
 from utils.openai_helper import (  # Import funkcji OpenAI (z automatycznym Langfuse)
@@ -762,27 +762,6 @@ else:  # Jeśli wykonano predykcję (zapisaną w session_state)
         st.warning(f"Brak danych o zwycięzcach w kategorii {age_category} dla płci {gender_pl}")
     
     # ============================================
-    # EKSPORT DANYCH DO EXCELA
-    # ============================================
-    st.markdown("---")
-    st.markdown("### 📥 Eksport Danych")
-    
-    # Przygotuj dane do eksportu
-    df_export = df_historical.copy()  # Kopia danych
-    df_export['Czas_formatted'] = df_export['Czas_sekundy'].apply(format_time_from_seconds)  # Format czasu
-    
-    # Przygotuj Excel
-    excel_buffer = prepare_excel_export(df_export)  # Przygotuj plik Excel
-    
-    # Przycisk do pobrania
-    st.download_button(
-        label="⬇️ Pobierz pełne dane (Excel)",
-        data=excel_buffer,
-        file_name=f"polmaraton_wroclaw_{EVENT_YEARS[0]}_{EVENT_YEARS[1]}.xlsx",
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
-    
-    # ============================================
     # SYMULATOR CZASÓW
     # ============================================
     st.markdown("---")
@@ -877,6 +856,35 @@ else:  # Jeśli wykonano predykcję (zapisaną w session_state)
                 st.success(f"⬇️ Szybszy o {abs(diff_seconds)//60} min {abs(diff_seconds)%60} s względem Twojego wyniku")
             else:
                 st.info("➡️ Identyczny czas jak Twój wynik")
+    
+    # ============================================
+    # EKSPORT DANYCH DO EXCELA
+    # ============================================
+    st.markdown("---")
+    st.markdown("### 📥 Eksport Danych")
+    st.markdown("""
+    <div class="info-box">
+        <strong>📊 Dostępne dane:</strong><br>
+        Pełna baza wyników Półmaratonu Wrocławskiego z lat 2023-2024 (21 957 rekordów) w formacie Excel.
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Przycisk do pobrania pre-generowanego pliku Excel
+    excel_file_path = "data/polmaraton_wroclaw_2023_2024.xlsx"
+    
+    try:
+        with open(excel_file_path, "rb") as file:
+            excel_data = file.read()
+        
+        st.download_button(
+            label="⬇️ Pobierz pełne dane (Excel)",
+            data=excel_data,
+            file_name=f"polmaraton_wroclaw_{EVENT_YEARS[0]}_{EVENT_YEARS[1]}.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            use_container_width=True
+        )
+    except FileNotFoundError:
+        st.error("❌ Plik Excel nie został znaleziony. Skontaktuj się z administratorem.")
     
 # ============================================
 # STOPKA
