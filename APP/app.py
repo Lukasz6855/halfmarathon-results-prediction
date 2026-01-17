@@ -870,7 +870,8 @@ else:  # Jeśli wykonano predykcję (zapisaną w session_state)
     """, unsafe_allow_html=True)
     
     # Przycisk do pobrania pre-generowanego pliku Excel
-    excel_file_path = "data/polmaraton_wroclaw_2023_2024.xlsx"
+    # Ścieżka względem lokalizacji app.py (działa lokalnie i na Streamlit Cloud)
+    excel_file_path = os.path.join(os.path.dirname(__file__), "data", "polmaraton_wroclaw_2023_2024.xlsx")
     
     try:
         with open(excel_file_path, "rb") as file:
