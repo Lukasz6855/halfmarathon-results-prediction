@@ -15,7 +15,7 @@ load_dotenv()
 # Import modułów z aplikacji
 from config import *  # Import wszystkich stałych z konfiguracji
 from utils.data_loader import load_historical_data, get_data_summary  # Import funkcji do ładowania danych
-from utils.model_loader import load_model_from_blob, get_model_info  # Import funkcji do ładowania modelu
+from utils.model_loader import load_model_from_local, get_model_info  # Import funkcji do ładowania modelu
 from utils.predictor import prepare_input_data, predict_time, calculate_age_category  # Import funkcji predykcji
 from utils.stats_calculator import (  # Import funkcji statystyk
     get_winners, get_averages, get_category_stats,
@@ -373,7 +373,7 @@ except Exception as e:  # Jeśli błąd podczas ładowania
 
 # Wczytaj model ML
 try:
-    model = load_model_from_blob()  # Załaduj model z Vercel Blob
+    model = load_model_from_local()  # Załaduj model z lokalnego folderu
     model_info = get_model_info(model)  # Pobierz info o modelu
     st.sidebar.success(f"✅ Model {model_info.get('model_name', 'N/A')} załadowany")  # Potwierdzenie
 except Exception as e:  # Jeśli błąd
