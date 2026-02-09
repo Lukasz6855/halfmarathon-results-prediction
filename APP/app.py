@@ -42,26 +42,6 @@ st.set_page_config(
 )
 
 # ============================================
-# META TAGI OPEN GRAPH (dla LinkedIn)
-# ============================================
-st.markdown("""
-<head>
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Przewidywanie czasu w Półmaratonie Wrocławskim 🏃" />
-    <meta property="og:description" content="Aplikacja AI wykorzystująca Machine Learning do przewidywania Twojego czasu w półmaratonie na podstawie wieku, płci i doświadczenia. Sprawdź swoją prognozę!" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=1200&h=630&fit=crop" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="pl_PL" />
-    
-    <!-- Additional Meta Tags -->
-    <meta name="description" content="Przewiduj swój czas w Półmaratonie Wrocławskim używając zaawansowanego modelu Machine Learning. Wprowadź swój wiek, płeć i doświadczenie biegowe." />
-    <meta name="keywords" content="półmaraton, wrocław, przewidywanie czasu, machine learning, AI, bieganie" />
-</head>
-""", unsafe_allow_html=True)
-
-# ============================================
 # STYLE CSS - PREMIUM DESIGN
 # ============================================
 st.markdown("""
